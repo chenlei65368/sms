@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+	<!-- 本地数据库jdbc驱动包路径 -->
+	<classPathEntry location="D:/Program Files (x86)/apache-maven-3.1.1/repository/mysql/mysql-connector-java/5.1.35/mysql-connector-java-5.1.35.jar" />
+	<!-- jdbc数据库连接配置 -->
+	<context id="mysqlTables" targetRuntime="MyBatis3">
+		<property name="mergeable" value="false"></property>
+  	
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/walle"
+			userId="root"
+			password="root">
+		</jdbcConnection>
+    
+		<javaTypeResolver >
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- targetPackage为本地实体类项目相对路径    targetProject为项目包绝对路径-->
+	
+		<javaModelGenerator targetPackage="com.dzmsoft.sms.base.pojo" targetProject="dzmsoft-sms-base">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.dzmsoft.sms.base.mapping"  targetProject="dzmsoft-sms-base">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.dzmsoft.sms.base.dao"  targetProject="dzmsoft-sms-base">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<table schema="" tableName="sms_test"></table>
+	<!-- 	<table schema="" tableName="sms_house_building"></table> -->
+	<!-- 	<table schema="" tableName="sms_member_address"></table> -->
+		<!-- <table schema="" tableName="sms_clean_bag_line"></table>
+		<table schema="" tableName="sms_person_require"></table>
+		<table schema="" tableName="sms_person_require_line"></table> -->
+<!-- 		<table schema="" tableName="sms_household_bag"></table>
+		<table schema="" tableName="sms_household_require"></table>
+		<table schema="" tableName="sms_person_require"></table>
+		<table schema="" tableName="sms_person_require_line"></table>
+		<table schema="" tableName="sms_region"></table>
+		<table schema="" tableName="sms_member_card"></table>
+		<table schema="" tableName="sms_member_card_consume"></table>
+		<table schema="" tableName="sms_member_coupon"></table>
+		<table schema="" tableName="sms_order"></table>
+		<table schema="" tableName="sms_household_order"></table> -->
+<!-- 		<table schema="" tableName="sms_coupon"></table>
+		<table schema="" tableName="sms_employee"></table>
+		<table schema="" tableName="sms_employee_schedule"></table>
+		<table schema="" tableName="sms_household_order"></table>
+		<table schema="" tableName="sms_mall_brand"></table>
+		<table schema="" tableName="sms_mall_commodity"></table>
+		<table schema="" tableName="sms_newhome_order"></table>
+		<table schema="" tableName="sms_order"></table> 
+		<table schema="" tableName="sms_order_evaluation"></table> 
+		<table schema="" tableName="sms_order_log"></table> --> 
+	</context>
+</generatorConfiguration>
